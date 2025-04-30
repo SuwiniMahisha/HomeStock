@@ -19,13 +19,13 @@ jobs:
       - uses: SonarSource/sonarqube-scan-action@v5
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }} # Token from GitHub Secrets
-          SONAR_HOST_URL: http://localhost:9000 # Your SonarQube URL
-          SONAR_PROJECT_KEY: home-stock  # Your project key
-          SONAR_PROJECT_NAME: HomeStock  # Your project name
-          SONAR_PROJECT_VERSION: 1.0     # Your project version
+          SONAR_HOST_URL: http://localhost:9000
+          SONAR_PROJECT_KEY: home-stock
+          SONAR_PROJECT_NAME: HomeStock
+          SONAR_PROJECT_VERSION: 1.0
           SONAR_SOURCES: .  # Path to source code
 
-      # Optional: Check the Quality Gate status (uncomment if needed)
+      # If you want to check the Quality Gate status (optional)
       # - uses: SonarSource/sonarqube-quality-gate-action@v1
       #   timeout-minutes: 5
       #   env:

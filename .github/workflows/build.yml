@@ -1,4 +1,4 @@
-name: Build
+name: Build and analyze
 
 on:
   push:
@@ -9,16 +9,24 @@ jobs:
   build:
     name: Build and analyze
     runs-on: macos-latest
-    
+
     steps:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
 
-      # SonarQube Analysis Step
+      # SonarQube Scan
       - uses: SonarSource/sonarqube-scan-action@v5
-        with:
-          sonar-project-key: home-stock
-          sonar-project-name: HomeStock
-          sonar-host-url: http://localhost:9000 # Use secrets for security
-          sonar-login: sqa_ef3f8b7083ed5ccf5eede7e453a9cd61363dc0c9 # Use secrets for security
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }} # Token from GitHub Secrets
+          SONAR_HOST_URL: http://localhost:9000 # Your SonarQube URL
+          SONAR_PROJECT_KEY: home-stock  # Your project key
+          SONAR_PROJECT_NAME: HomeStock  # Your project name
+          SONAR_PROJECT_VERSION: 1.0     # Your project version
+          SONAR_SOURCES: .  # Path to source code
+
+      # Optional: Check the Quality Gate status (uncomment if needed)
+      # - uses: SonarSource/sonarqube-quality-gate-action@v1
+      #   timeout-minutes: 5
+      #   env:
+      #     SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}

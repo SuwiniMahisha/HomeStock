@@ -5,7 +5,6 @@ on:
     branches:
       - main
 
-
 jobs:
   build:
     name: Build and analyze
@@ -15,13 +14,11 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
+
+      # SonarQube Analysis Step
       - uses: SonarSource/sonarqube-scan-action@v5
-        env:
-          SONAR_TOKEN: sqa_ef3f8b7083ed5ccf5eede7e453a9cd61363dc0c9
-          SONAR_HOST_URL: http://localhost:9000
-      # If you wish to fail your job when the Quality Gate is red, uncomment the
-      # following lines. This would typically be used to fail a deployment.
-      # - uses: SonarSource/sonarqube-quality-gate-action@v1
-      #   timeout-minutes: 5
-      #   env:
-      #     SONAR_TOKEN: sqa_ef3f8b7083ed5ccf5eede7e453a9cd61363dc0c9
+        with:
+          sonar-project-key: home-stock
+          sonar-project-name: HomeStock
+          sonar-host-url: http://localhost:9000 # Use secrets for security
+          sonar-login: sqa_ef3f8b7083ed5ccf5eede7e453a9cd61363dc0c9 # Use secrets for security

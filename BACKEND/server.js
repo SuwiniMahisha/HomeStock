@@ -27,6 +27,8 @@ const notificationRoutes = require('./routes/NotificationRoutes');
 const seasonalReminder = require("./routes/seasonalReminder");
 const shoppingListRoutes = require("./routes/shoppingList"); 
 const reminderRoutes = require("./routes/reminderRoutes");
+const mealPlanRoutes = require('./routes/MealPlanRoutes');
+
 
 
 // API Routes
@@ -37,6 +39,8 @@ app.use('/api/notifications', notificationRoutes);
 app.use("/api/seasonal-reminders", seasonalReminder);
 app.use("/api/shopping-list", shoppingListRoutes);
 app.use("/api/reminders", reminderRoutes);
+app.use('/api/meal-plans', mealPlanRoutes);
+
 app.use('/uploads', express.static(path.join(__dirname, 'uploads'))); // Serve static files
 
 

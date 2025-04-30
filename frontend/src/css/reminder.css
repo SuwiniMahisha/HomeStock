@@ -1,24 +1,27 @@
  /* Reminder Container */
 .reminder-container {
-    max-width: 650px;
+    max-width: 70%;
     margin: 50px auto;
     padding: 25px;
-    background: #ffffff;
+    background: #fff;
     border-radius: 12px;
     box-shadow: 0px 6px 18px rgba(0, 0, 0, 0.1);
     text-align: center;
     font-family: 'Inter', sans-serif;
     color: #333;
+    position: relative;
+    background-image: url('../images/inventory.jpeg');
 }
 
 /* Heading */
-.reminder-container h2 {
-    font-size: 22px;
-    margin-bottom: 20px;
+.reminder-title {
+    font-size: 26px;
+    font-weight: 700;
     color: #2c3e50;
-    font-weight: 600;
-    border-bottom: 2px solid #eaeaea;
-    padding-bottom: 8px;
+    border-bottom: 3px solid #eaeaea;
+    padding-bottom: 10px;
+    margin-bottom: 25px;
+    text-align: center;
 }
 
 /* Reminder List */
@@ -29,7 +32,7 @@
 }
 
 /* Reminder Item */
-.reminder-item {
+.reminder-item, .non-expiring {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -37,66 +40,70 @@
     margin-bottom: 12px;
     background: #f8f9fa;
     border-radius: 10px;
-    border: 1px solid #e0e0e0;
+    border: 1px solid #003b00be;
     transition: all 0.3s ease;
 }
 
+ 
 /* Hover effect */
-.reminder-item:hover {
+.reminder-item:hover, .non-expiring:hover {
     background: #f1f1f1;
     box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
 }
 
 /* Reminder Message */
-.reminder-item p {
+.reminder-item p, .non-expiring p {
     flex-grow: 1;
-    font-size: 15px;
+    font-size: 18px;
     color: #444;
     text-align: left;
-    margin-right: 18px; /* 0.5cm space between message and buttons */
+    margin-right: 18px;
+ 
+}
+
+ 
+.non-expiring p {
+    font-size: 30px; /* Larger font size */
+    font-weight: bold;
 }
 
 /* Button Container */
+ 
+/* Button Group */
+ 
+ 
+ 
+
+/* Button Group */
+ 
 .button-group {
     display: flex;
-    gap: 18px; /* 0.5cm space between Add and Skip buttons */
+    gap: 18px;
 }
 
 /* Buttons */
-.add-button, .skip-button, .back-button {
-    padding: 10px 16px;
-    font-size: 14px;
-    font-weight: 600;
+.add-button, .skip-button, .shopping-list-button {
+    background: linear-gradient(to right, #003b00be, #5ef466a6);
+    color: white;
+    padding: 10px 20px;
     border: none;
+    border-radius: 5px;
+    font-size: 16px;
     cursor: pointer;
-    border-radius: 6px;
-    transition: all 0.3s ease;
-    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: background-color 0.3s ease;
 }
 
-.add-button {
-    background: #27ae60;
-    color: white;
-}
-.add-button:hover {
+.add-button:hover, .skip-button:hover, .shopping-list-button:hover {
     background: #219150;
 }
 
-.skip-button {
-    background: #e74c3c;
-    color: white;
-}
-.skip-button:hover {
-    background: #c0392b;
-}
-
-.back-button {
-    background: #2980b9;
-    color: white;
-    margin-top: 20px;
-}
-.back-button:hover {
-    background: #21618c;
+/* Shopping List Button Centered */
+.shopping-list-button {
+    display: block;
+    margin: 30px auto 0;
 }
 
 /* Empty Reminder Message */
@@ -112,25 +119,27 @@
         max-width: 90%;
         padding: 20px;
     }
-    
-    .reminder-item {
-        flex-direction: column;
+ 
+    .reminder-item, .non-expiring {
+ 
+
+     flex-direction: column;
         align-items: flex-start;
         padding: 15px;
     }
 
-    .reminder-item p {
+    .reminder-item p, .non-expiring p {
         margin-bottom: 10px;
-        margin-right: 0; /* Reset margin for small screens */
+        margin-right: 0;
     }
 
     .button-group {
         width: 100%;
         justify-content: flex-end;
-        gap: 12px; /* Adjusted for mobile */
+        gap: 12px;
     }
-
-    .add-button, .skip-button {
-        width: auto;
-    }
+ 
 }
+ 
+
+ 

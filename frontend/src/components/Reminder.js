@@ -86,37 +86,37 @@ const Reminder = () => {
 
   return (
     <div className="reminder-container">
-      <h2>Seasonal Reminders</h2>
+      <h2 className="reminder-title">Seasonal Reminders</h2>
       {reminders.filter(reminder => !handledItems.includes(reminder.item) && reminder.message).length === 0 ? (
-        <p>No active seasonal reminders.</p>
+        <p className="no-reminders-message">No active seasonal reminders.</p>
       ) : (
-        <ul>
+        <ul className="reminder-list">
           {reminders
             .filter(reminder => !handledItems.includes(reminder.item) && reminder.message) // Filter out reminders without a message
             .map((reminder, index) => (
-              <li key={`${reminder._id}-${index}`}> {/* Ensure unique key using _id and index */}
-                {reminder.message}
-                <button onClick={() => handleAction(reminder._id, reminder.item, "add")}>Add</button>
-                <button onClick={() => handleAction(reminder._id, reminder.item, "skip")}>Skip</button>
+              <li key={`${reminder._id}-${index}`} className="reminder-item"> {/* Ensure unique key using _id and index */}
+                <span className="reminder-message">{reminder.message}</span>
+                <button className="add-button" onClick={() => handleAction(reminder._id, reminder.item, "add")}>Add</button>
+                <button className="skip-button" onClick={() => handleAction(reminder._id, reminder.item, "skip")}>Skip</button>
               </li>
             ))}
         </ul>
       )}
 
-      <h2>Non-Expiring Item Reminders</h2>
+      <h2 className="reminder-title">Non-Expiring Item Reminders</h2>
       {nonExpiringReminders.length > 0 ? (
         nonExpiringReminders.map((reminder) => (
-          <div key={reminder._id}>
-            <p>{reminder.reminderMessage}</p>
-            <button onClick={() => handleAction(reminder._id, reminder.itemName, "add")}>Add to List</button>
-            <button onClick={() => handleAction(reminder._id, reminder.itemName, "skip")}>Skip</button>
+          <div key={reminder._id} className="non-expiring">
+            <p className="reminder-message">{reminder.reminderMessage}</p>
+            <button className="add-button" onClick={() => handleAction(reminder._id, reminder.itemName, "add")}>Add</button>
+            <button className="skip-button" onClick={() => handleAction(reminder._id, reminder.itemName, "skip")}>Skip</button>
           </div>
         ))
       ) : (
-        <p>No non-expiring reminders.</p>
+        <p className="no-reminders-message">No non-expiring reminders.</p>
       )}
 
-      <button onClick={() => navigate("/shopping-list")}>Go to Shopping List</button>
+      <button className="shopping-list-button" onClick={() => navigate("/shopping-list")}>Go to Shopping List</button>
     </div>
   );
 };

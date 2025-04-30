@@ -1,0 +1,202 @@
+.mealplanning-container {
+  display: flex;
+  min-height: 100vh;
+  background-color: #f9f9f9;
+  position: relative;
+}
+
+/* Standalone content wrapper for meal planning */
+.meal-content-wrapper {
+  flex: 1;
+  padding: 20px 30px;
+  width: calc(100% - 260px); /* Account for sidebar width */
+  margin-left: 260px; /* Make room for the sidebar */
+}
+
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 70vh;
+}
+
+.page-title {
+  position: relative;
+  padding-bottom: 10px;
+  margin-bottom: 24px;
+  color: #2c3e50;
+  font-weight: 600;
+}
+
+.page-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background-color: #1976d2;
+}
+
+.quick-actions {
+  transition: transform 0.3s ease;
+}
+
+.quick-actions:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.active-plan {
+  border-left: 5px solid #2196f3;
+  transition: all 0.3s ease;
+}
+
+.active-plan:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.recent-recipes {
+  border-left: 5px solid #4caf50;
+  transition: all 0.3s ease;
+}
+
+.recent-recipes:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* Recipe Cards */
+.MuiCard-root {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.MuiCard-root:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* Meal Plan Card */
+.meal-plan-card {
+  transition: all 0.3s ease;
+}
+
+.meal-plan-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 960px) {
+  .mealplanning-container {
+    flex-direction: column;
+  }
+  
+  .meal-content-wrapper {
+    width: 100%;
+    margin-left: 0;
+    padding: 15px;
+    margin-top: 60px; /* Space for mobile menu */
+  }
+}
+
+/* Animation for loading */
+@keyframes pulse {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.loading-container .MuiCircularProgress-root {
+  animation: pulse 1.5s infinite;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Print Styles */
+@media print {
+  body {
+    background-color: white;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .print-container {
+    max-width: 100% !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  
+  .no-print {
+    display: none !important;
+  }
+  
+  .mealplanning-container {
+    display: block;
+    background-color: white;
+  }
+  
+  .meal-content-wrapper {
+    width: 100% !important;
+    margin-left: 0 !important;
+  }
+  
+  .side-navbar {
+    display: none !important;
+  }
+  
+  .MuiPaper-root {
+    box-shadow: none !important;
+    border: 1px solid #eee;
+    margin-bottom: 20px !important;
+  }
+  
+  .MuiTableContainer-root {
+    overflow: visible !important;
+  }
+  
+  .MuiTable-root {
+    page-break-inside: auto;
+  }
+  
+  .MuiTableRow-root {
+    page-break-inside: avoid;
+    page-break-after: auto;
+  }
+  
+  .page-title::after {
+    display: none;
+  }
+  
+  h4, h5, h6 {
+    margin-top: 15px !important;
+  }
+  
+  /* Add page breaks */
+  .page-break-after {
+    page-break-after: always;
+  }
+} 

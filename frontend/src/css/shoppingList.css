@@ -1,298 +1,220 @@
- /* General Page Styling */
+ /* Main Container */
 .shopping-list-container {
-  max-width: 600px;
-  margin: 40px auto;
+  display: flex;
+  justify-content: flex-start; /* Align both sidebar and content to the left */
+  align-items: flex-start;
+  width: 100%;
   padding: 20px;
-  background: #ffffff;
+}
+
+/* Sidebar */
+
+
+/* Shopping List Wrapper */
+.shopping-list-wrapper {
+  margin-left: 250px; /* Ensure the shopping list content does not overlap the sidebar */
+  flex-grow: 1;
+  padding: 30px;
+  background-color: #ffffff;
+  background-image: url('../images/inventory.jpeg');
+  background-size: cover;
+  background-position: center right;
+  background-repeat: no-repeat;
+  width: calc(100% - 250px); /* Ensure it takes the rest of the space */
+  height: 80%;
+  margin-top: 60px;
   border-radius: 10px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  max-width: 75%;
+  margin: 40px auto;
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.1);
   text-align: center;
 }
 
-/* Heading */
-.shopping-list-container h1 {
-  font-size: 24px;
-  color: #333;
-  margin-bottom: 20px;
+/* Shopping List Section */
+.shopping-list-section {
+  margin-top: 25px;
+  text-align: center;
 }
 
-/* Add Item Section */
-.add-item-section {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: 20px;
-}
-
-/* Input Field */
-.item-input {
-  flex: 1;
-  padding: 10px;
-  border: 2px solid #ccc;
-  border-radius: 5px;
-  font-size: 16px;
-  outline: none;
-  transition: border 0.3s ease-in-out;
-}
-
-.item-input:focus {
-  border-color: #007bff;
-}
-
-/* Buttons */
-button {
-  padding: 10px 15px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 16px;
-  transition: background 0.3s ease;
-}
-
-/* Individual Button Colors */
-.add-button {
-  background-color: #28a745;
-  color: white;
-}
-
-.clear-button {
-  background-color: #dc3545;
-  color: white;
-}
-
-.download-button {
-  background-color: #007bff;
-  color: white;
-}
-
-.remove-button {
-  background-color: #ff5722;
-  color: white;
-}
-
-/* Button Hover Effects */
-.add-button:hover {
-  background-color: #218838;
-}
-
-.clear-button:hover {
-  background-color: #c82333;
-}
-
-.download-button:hover {
-  background-color: #0056b3;
-}
-
-.remove-button:hover {
-  background-color: #e64a19;
-}
-
-/* Shopping List Items */
-.shopping-list-items {
-  text-align: left;
-  padding: 0;
-}
-
-.shopping-list-items ul {
+/* List Items - Centered */
+ul {
   list-style: none;
   padding: 0;
-}
-
-.shopping-list-items li {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background: #f8f9fa;
-  padding: 10px;
-  margin-bottom: 5px;
-  border-radius: 5px;
-  border: 1px solid #ddd;
-  font-size: 16px;
-  transition: background 0.3s ease;
-}
-
-.shopping-list-items li:hover {
-  background: #e9ecef;
-}
-
-/* Checkbox and Item Text */
-.shopping-list-items input[type="checkbox"] {
-  margin-right: 10px;
-  cursor: pointer;
-}
-
-.item-text {
-  flex: 1;
-  font-size: 16px;
-  color: #333;
-}
-
-/* Edit Mode */
-.edit-input {
-  width: 150px;
-  padding: 5px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  font-size: 14px;
-}
-
-/* Action Buttons */
-.edit-button,
-.update-button,
-.cancel-button {
-  background: #ffc107;
-  color: #333;
-}
-
-.edit-button:hover,
-.update-button:hover {
-  background: #e0a800;
-}
-
-.cancel-button {
-  background: #6c757d;
-  color: white;
-}
-
-.cancel-button:hover {
-  background: #5a6268;
-}
-
-/* Action Buttons Container */
-.action-buttons {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
   margin-top: 20px;
-  gap: 10px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-/* Mobile Responsiveness */
-@media (max-width: 600px) {
-  .shopping-list-container {
-      max-width: 90%;
-      padding: 15px;
-  }
-
-  .add-item-section {
-      flex-direction: column;
-  }
-
-  .item-input {
-      width: 100%;
-  }
-
-  button {
-      width: 100%;
-  }
-
-  .shopping-list-items li {
-      flex-direction: column;
-      align-items: flex-start;
-  }
-
-  .edit-button, .update-button, .cancel-button {
-      width: 100%;
-      margin-top: 5px;
-  }
-
-  .action-buttons {
-      flex-direction: column;
-      gap: 5px;
-  }
-}
-
-/* ✅ Shopping List Item - Flex for Alignment */
-.shopping-list-item {
+li {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: #f8f9fa;
-  padding: 10px;
-  margin-bottom: 5px;
-  border-radius: 5px;
-  border: 1px solid #ddd;
-  font-size: 16px;
+  padding: 14px;
+ 
+  font-size: 18px;
+ 
+  
   transition: background 0.3s ease;
+  width: 80%;
 }
-
-/* ✅ Item Name Left */
-.item-text {
-  flex: 1;
-  font-size: 16px;
-  color: #333;
-  text-align: left;
-}
-
-/* ✅ Checkbox Right */
-.item-checkbox {
+li:hover {
+  background: rgba(2, 49, 2, 0.2); /* Subtle green shade */
+  color: #013801; /* Darker green for text */
   cursor: pointer;
-  transform: scale(1.2);
+  border-radius: 10px;
 }
 
-/* ✅ Edit and Remove Buttons Appear Only When Selected */
-.action-buttons {
+
+/* Item Name - Centered */
+li span {
+  flex: 1;
+  text-align: center;
+  font-weight: 500;
+  color: #333;
+  display: block;
+}
+
+/* Checkbox Right Alignment */
+.checkbox {
+  margin-left: 15px;
+  transform: scale(1.2);
+  cursor: pointer;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+  order: 2;
+}
+
+.checkbox:checked {
+  background-color: #5ef466a6;
+  border-color: #5ef466a6;
+}
+
+/* Input and Add Button Row */
+.input-container {
   display: flex;
   justify-content: center;
   gap: 10px;
   margin-top: 20px;
 }
 
-/* ✅ Mobile Responsive */
-@media (max-width: 600px) {
-  .shopping-list-item {
-    flex-direction: row-reverse;
-    justify-content: space-between;
-  }
-
-  .action-buttons {
-    flex-direction: column;
-    gap: 5px;
-  }
+.input-container input {
+  padding: 10px;
+  font-size: 20px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  width: 60%;
+  box-sizing: border-box;
 }
 
-/* ✅ Fix Button Alignment in Mobile */
-@media (max-width: 600px) {
-  .action-buttons {
+.input-container .Add {
+  background: linear-gradient(to right, #003b00be, #5ef466a6);
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.input-container .Add:hover {
+  background-color: #033c1a;
+}
+
+/* Button Container */
+.button-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+/* Button Styles */
+.Add, .Save, .Cancel, .ready-to-shop-btn, .reminders-btn, .add-item-btn, .edit-selected-btn, 
+.remove-selected-btn, .clear-list-btn, .download-pdf-btn {
+  background: linear-gradient(to right, #003b00be, #5ef466a6);
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.Add:hover, .Save:hover, .Cancel:hover, .ready-to-shop-btn:hover, .reminders-btn:hover, .add-item-btn:hover, 
+.edit-selected-btn:hover, .remove-selected-btn:hover, .clear-list-btn:hover, 
+.download-pdf-btn:hover {
+  background-color: #033c1a;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .shopping-list-container {
+    flex-direction: column; /* Stack sidebar and content vertically */
+    width: 100%;
+    padding: 20px;
+  }
+
+  .sidebar {
+    position: absolute;
+    left: -250px; /* Hide sidebar off-screen */
+    top: 0;
+    transition: left 0.3s ease-in-out;
+    width: 250px;
+    background-color: #fff;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+  }
+
+  .sidebar.show {
+    left: 0; /* Show sidebar when added a 'show' class */
+  }
+
+  .shopping-list-wrapper {
+    margin-left: 0;
+    padding: 20px;
+    width: 100%;
+    height: 100%;
+    margin-top: 0;
+  }
+
+  ul {
+    padding-left: 0;
+  }
+
+  li {
+    font-size: 16px;
     flex-direction: column;
-    align-items: center;
-    gap: 5px;
+    padding: 12px;
     width: 100%;
   }
 
-  .action-buttons button {
+  .button-container {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .input-container {
+    flex-direction: column;
     width: 100%;
   }
-}
 
-/* Parent wrapper for both sections */
-.shopping-list-wrapper {
-  display: flex; /* Use flexbox to place dashboard and shopping list side by side */
-  gap: 30px; /* Space between the sections */
-}
+  .input-container input {
+    width: 100%;
+  }
 
-/* Dashboard section */
-.dashboard-section {
-  flex: 1; /* Takes up remaining space */
-  max-width: 350px; /* Optional: You can adjust the size */
-  overflow-y: auto; /* If the content is too long, allow scrolling */
-}
-
-/* Shopping list section */
-.shopping-list-section {
-  flex: 2; /* Makes the shopping list take up more space */
-  max-width: 1000px; /* Adjust width if needed */
-  overflow-y: auto;
-}
-
-/* General Page Styling */
-.shopping-list-container {
-  max-width: 100%;
-  margin: 40px auto;
-  padding: 20px;
-  background: #ffffff;
-  border-radius: 10px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-  text-align: center;
+  .Add, .Save, .Cancel, .ready-to-shop-btn, .reminders-btn, .add-item-btn, .edit-selected-btn,
+  .remove-selected-btn, .clear-list-btn, .download-pdf-btn {
+    width: 100%;
+    font-size: 14px;
+  }
 }

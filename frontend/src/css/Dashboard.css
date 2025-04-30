@@ -1,6 +1,10 @@
 .dashboard-container {
   display: flex;
-}
+ 
+    background-color: #0140041d;
+   
+  }
+
 
 
 /* Dashboard Layout */

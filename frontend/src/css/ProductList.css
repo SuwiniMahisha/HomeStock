@@ -67,9 +67,16 @@
     cursor: pointer;
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 5px;
     transition: background-color 0.3s ease;
   }
+
+  .add-product-btn{
+    margin-right: 64%;
+    display: flex; /* Space only between these two buttons */
+  }
+ 
+  
 
   .add-product-btn:hover , .download-report-btn:hover {
     background-color: #033c1a;

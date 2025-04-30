@@ -4,11 +4,32 @@
   padding: 0;
   box-sizing: border-box;
   font-family: 'Roboto', sans-serif;
+  
 }
 
-body {
-  background-color: #012a039a;
+.homepage-container{
+  background-color: #001e025a;
  
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #000000;
+  font-size: 20px;
+  font-weight: 100;
+  transition: color 0.3s ease;
+  background: none !important; /* Ensure no background is applied */
+  border: none !important; /* Remove any unintended border */
+  outline: none !important; /* Remove focus outline */
+  box-shadow: none !important; /* Remove shadow if any */
+  padding: 5px 10px; /* Adjust padding if needed */
+}
+
+/* Remove unwanted hover effect */
+.nav-links a:hover {
+  color: #023102; /* Change this to your desired hover color */
+  background: none !important; 
+  border: none !important;
 }
 
 /* Navbar Styling */
@@ -18,7 +39,7 @@ body {
   top: 0;
   left: 0;
   background-color: rgba(255, 255, 255, 0.8);
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
   padding: 7px 10px;
   z-index: 1000;
 }
@@ -27,6 +48,8 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background: none; /* Ensure no background is applied */
+  border: none; /* Remove any unintended border */
 }
 
 .logo {
@@ -43,25 +66,15 @@ body {
   margin-right: 10px;
 }
 
+
+
 .nav-links {
   list-style: none;
-  display: flex;
-}
-
-.nav-links li {
-  margin: 0 20px;
-}
-
-.nav-links a {
-  text-decoration: none;
-  color: #000000;
-  font-size: 20px;
-  font-weight: 500;
-  transition: color 0.3s ease;
-}
-
-.nav-links a:hover {
-  color: #013e01; /* Accent color on hover */
+  display: flex;  /* Ensures links are displayed in a row */
+  flex-direction: row; /* Ensures they align in a horizontal row */
+  justify-content: center; /* Centers links in the navbar */
+  align-items: center;
+  gap: 20px; /* Adjust space between links */
 }
 
 

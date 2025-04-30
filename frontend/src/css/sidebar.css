@@ -3,7 +3,7 @@
   background-image: url('../images/sidebg.jpeg');
   background-repeat: no-repeat;
   background-size: 150% 100%;
-  padding: 20px;
+  padding: 8px;
   height: 100vh;
   position: fixed;
   border-right: 2px solid #ddd;
@@ -25,7 +25,7 @@
 }
 
 .side-navbar li {
-  margin: 30px 0;
+  margin: 1px 10;
 }
 
 .side-navbar a {
@@ -33,13 +33,13 @@
   text-decoration: none;
   font-size: 20px;
   display: block;
-  padding: 10px;
+  padding: 5px;
   transition: all 0.3s ease;
+  background: none; /* Ensure no background is applied */
+  border: none; /* Remove any borders */
+  outline: none; /* Remove focus outline */
+  box-shadow: none; /* Ensure no shadow is causing the effect */
 }
 
-.side-navbar a:hover {
-  background: rgba(24, 79, 2, 0.4);
-  border-radius: 10px;
-  padding-left: 15px;
-}
+
 
